@@ -26,33 +26,6 @@
      font-style: normal;
     }
 
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    .timer {
-      color: #6D886B;
-      text-align: center;
-    }
-
-    .timer li {
-      display: inline-block;
-      font-size: .75em;
-      list-style-type: none;
-      padding: 1em;
-      text-transform: uppercase;
-    }
-
-    .timer li span {
-      display: block;
-      font-size: 1.5rem;
-    }
-
-
-
 </style>
 
   </head>
@@ -77,7 +50,7 @@
           <a class="nav-link" href="#">RSVP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="travel.html">TRAVEL</a>
+          <a class="nav-link" href="#">TRAVEL</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,25 +83,8 @@
 
 <div class="container">
 <div class="row justify-content-center text-center my-5">
-    <div class="col-6">
-
-      <div class="timer">
-    <p>Countdown to the Big Day</p>
-    <ul>
-     <!--<li><span id="months"></span>months</li>-->
-      <li><span id="weeks"></span>weeks</li>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
-    </ul>
-  </div>
-
-
-      <br>
-      <img src="img/leaf.png" class="img" alt="Responsive image">
-      <br>
-      <br>
+    <div class="col-3">
+      <img src="img/leaf.png" class="img-fluid" alt="Responsive image">
       MORE DETAILS TO FOLLOW
     </div>
   </div>
@@ -150,38 +106,6 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script>
-const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24,
-      week = day * 7,
-      month = day * 30;
-
-let countDown = new Date('Jul 03, 2020 00:00:00').getTime(),
-    x = setInterval(function() {
-
-      let now = new Date().getTime(),
-          distance = countDown - now;
-
-
-      //document.getElementById('months').innerText = Math.floor(distance / (month)),
-
-      document.getElementById('weeks').innerText = Math.floor(distance / (week)),
-
-      document.getElementById('days').innerText = Math.floor((distance % (week)) / (day)),
-        document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
-
-      //do something later when date is reached
-      //if (distance < 0) {
-      //  clearInterval(x);
-      //  'IT'S MY BIRTHDAY!;
-      //}
-
-    }, second)
-</script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
