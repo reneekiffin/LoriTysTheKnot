@@ -1,9 +1,31 @@
+
+@font-face {
+    font-family: "Brainlove";
+    src: url(src/BrainloveTTF.ttf) format("truetype");
+}
+
 body {
   font-family: trajan-pro-3, serif;
   font-weight: 400;
   font-style: normal;
  }
 
+ h1{
+   font-family: "Brainlove";
+ }
+
+ h2{
+   font-size: .75em;
+   letter-spacing: .2em;
+ }
+
+a{
+  color: #6D886B;
+}
+
+a:hover{
+  color: #6D886B;
+}
 #homebannerbg{
 background-image: url(img/image1.jpg);
 background-repeat: none;
@@ -17,11 +39,19 @@ background-size: cover;
 
 .details{
 background-image: url(img/leafbg.png);
-background-repeat: none;
+background-repeat: no-repeat;
 background-position: center;
-background-size: cover; height: 80vh;
+background-size: cover;
+height: 80vh;
 }
 
+.bgleaf2{
+  background-image: url(img/leafbg2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
 
 
 footer{
