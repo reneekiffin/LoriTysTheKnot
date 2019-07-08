@@ -12,6 +12,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/tgs0xxi.css">
+    <link rel="stylesheet" href="style.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,41 +20,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-   body {
-     font-family: trajan-pro-3, serif;
-     font-weight: 400;
-     font-style: normal;
-    }
-
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    .timer {
-      color: #6D886B;
-      text-align: center;
-    }
-
-    .timer li {
-      display: inline-block;
-      font-size: .75em;
-      list-style-type: none;
-      padding: 1em;
-      text-transform: uppercase;
-    }
-
-    .timer li span {
-      display: block;
-      font-size: 1.5rem;
-    }
-
-
-
-</style>
 
   </head>
   <body>
@@ -79,37 +45,26 @@
         <li class="nav-item">
           <a class="nav-link" href="travel.html">TRAVEL</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Photos | Events
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Wedding</a>
-            <a class="dropdown-item" href="#">Reception</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="photos.html">PHOTOS</a>
         </li>
       </ul>
     </div>
   </nav>
 </div>
 
-  <div class="container-fluid" style="background-image: url(img/image1.jpg);  background-repeat: none; background-position: center; background-size: cover; height: 80vh;">
-  <div class="row">
-      <div class="col text-center">
-        <img src="img/LoriandTyson.png" class="img-fluid" alt="Responsive image">
-      </div>
-  </div>
-  <div class="row text-center">
-      <div class="col">
-        <div class="btn btn-outline-light">SAVE THE DATE</div>
-      </div>
+  <div id="homebannerbg" class="container-fluid">
+    <div id="homebannertext"class="row align-items-center justify-content-center text-center">
+        <div class="col text-center">
+          <img src="img/LoriandTyson.png" class="img-fluid" alt="Responsive image">
+          <br>
+          <div class="btn btn-outline-light">SAVE THE DATE</div>
+        </div>
     </div>
-
-
 </div>
 
-<div class="container">
-<div class="row justify-content-center text-center my-5">
+<div class="container-fluid">
+<div class="row details align-items-center justify-content-center text-center my-5">
     <div class="col-6">
 
       <div class="timer">
@@ -134,7 +89,7 @@
   </div>
 </div>
 
-<footer>
+<footer class="py-1">
   <div class="container">
   <div class="row justify-content-center text-center my-5">
       <div class="col-3">
