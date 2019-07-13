@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "restricted area"
+AuthUserFile http://loritystheknot.com/.htpasswd  
+require valid-user
