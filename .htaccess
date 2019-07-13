@@ -1,4 +1,3 @@
-AuthType Basic
-AuthName "restricted area"
-AuthUserFile .htpasswd  
-require valid-user
+AuthUserFile /.htpasswd
+AuthGroupFile /dev/null AuthName "index.html" AuthType 
+Basic require valid-user
