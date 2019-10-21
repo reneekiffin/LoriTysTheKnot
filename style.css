@@ -30,6 +30,7 @@ a{
 a:hover{
   color: #6D886B;
 }
+
 #homebannerbg{
 background-image: url(img/image1.jpg);
 background-repeat: none;
@@ -46,7 +47,7 @@ background-image: url(img/leafbg.png);
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
-height: 80vh;
+height: 50vh;
 }
 
 .bgleaf2{
@@ -91,4 +92,11 @@ footer a:hover{
  .timer li span {
    display: block;
    font-size: 1.5rem;
+ }
+
+/*for sticky header*/
+ .sticky {
+   position: fixed;
+   top: 0;
+   width: 100%;
  }
