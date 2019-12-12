@@ -18,6 +18,8 @@
 
     <link rel="stylesheet" href="https://use.typekit.net/tgs0xxi.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slideshow.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,9 +38,8 @@
   </head>
   <body>
 
-<div style="background-color:white;">
 <div class="container">
-      <nav id="nav"class="navbar navbar-expand-lg sticky-top navbar-light">
+      <nav class="navbar navbar-expand-lg sticky-top navbar-light">
     <a class="navbar-brand" href="index.html">Lori and Tyson</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -47,21 +48,23 @@
       <ul class="navbar-nav">
 
         <li class="nav-item">
-          <a class="nav-link" href="#story">Our Story</a>
+          <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#rsvp">RSVP</a>
+          <a class="nav-link" href="#story">Story</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#travel">TRAVEL</a>
+          <a class="nav-link" href="rsvp.html">RSVP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#photos">PHOTOS</a>
+          <a class="nav-link" href="travel.html">TRAVEL</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="photos.html">PHOTOS</a>
         </li>
       </ul>
     </div>
   </nav>
-</div>
 </div>
 
 <!--BANNER-->
@@ -116,12 +119,12 @@
   </div>
 </div>
 
-<!--OUR STORY CONTENT-->
-<div id="story"class="container-fluid">
+<!--STORY CONTENT-->
+<div class="container-fluid">
   <div class="row bgleaf2 align-items-center justify-content-center text-center my-5">
     <div class="col-6">
       <div class="my-5">
-        <a href="https://www.instagram.com/explore/tags/loritystheknot/"><h2>#LoriTysTheKnot</h2></a>
+        <a name="story" href="https://www.instagram.com/explore/tags/loritystheknot/"><h2>#LoriTysTheKnot</h2></a>
         <h1>July 3, 2020</h1>
       </div>
 
@@ -141,67 +144,37 @@
 
 
 
-<!-- SLIDESHOW -->
-<div class="container">
-  <h2>Carousel Example</h2>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
 
+<!-- SLIDESHOW-->
 
-
-
-<!--RSVP-->
-<div class="container-fluid">
-<div class="bgleaf2 row align-items-center justify-content-center text-center my-5">
-  <div class="col-6">
-    <img src="img/leaf.png" class="img" alt="Responsive image">
-    <br>
-    <div id="eventbrite-widget-container-64940762569"></div>
-
-<a  class="btn btn-light my-5" href="https://www.eventbrite.com/e/wedding-tickets-64940762569?ref=elink" target="_blank" style="color:#6D886B">CLICK TO RSVP</a>
-
-<br>
-<img src="img/leaf2.png" class="img" alt="Responsive image">
-</div>
-</div>
-</div>
-
-
-<!--TRAVEL-->
-<div id="travel" class="container-fluid">
-<div class="row justify-content-center text-center my-5">
-  <div class="col">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15154.830936915225!2d-78.35720441771582!3d18.269214899915646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ed90d8512302c85%3A0x7bc0f136de355913!2sNegril%2C+Jamaica!5e0!3m2!1sen!2sus!4v1562542113787!5m2!1sen!2sus" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-  </div>
-</div>
-</div>
-<div class="container-fluid">
-  <div class="row details align-items-center justify-content-center text-center my-5">
-    <div class="col-6">
-    PLEASE SEE YOUR INVITATION FOR MORE DETAILS ON HOTEL PRICING AND GUEST DISCOUNTS.
+<div class="split-slideshow">
+  <div class="slideshow">
+    <div class="slider">
+      <div class="item">
+        <img src="img/slideshow/1.jpg" />
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg" />
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg" />
+      </div>
+      <div class="item">
+        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg" />
+      </div>
     </div>
+  </div>
+  <div class="slideshow-text">
+    <div class="item">Canyon</div>
+    <div class="item">Desert</div>
+    <div class="item">Erosion</div>
+    <div class="item">Shape</div>
   </div>
 </div>
 
-<!--PHOTOS-->
-<div id="photos"class="container-fluid">
-<div class="details row align-items-center justify-content-center text-center my-5">
-  <div class="col-6">
-    <img src="img/leaf.png" class="img" alt="Responsive image">
-    <br>
-
-    <div class="my-5">Tag Pictures from the Wedding and Reception #LoriTysTheKnot</div>
-
-    <br>
-    <img src="img/leaf2.png" class="img" alt="Responsive image">
-    </div>
-</div>
-</div>
+<a class="the-most" target="_blank" href="https://codepen.io/2017/popular/pens/10/">
+  <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/themost-2017.png">
+</a>
 
 
 <!--FOOTER CONTENT-->
@@ -254,22 +227,6 @@ let countDown = new Date('Jul 03, 2020 00:00:00').getTime(),
 
     }, second)
 </script>
-<!--Sticky Header-->
-<script>
-window.onscroll = function() {myFunction()};
-
-var header = document.getElementById("nav");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
-
 <script src="slideshow.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

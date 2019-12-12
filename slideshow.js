@@ -1,39 +1,83 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-//  Inspired by https://codepen.io/dropside/pen/bxhke  //
-//  Images from https://certaine.tumblr.com/           //
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+HTML  SCSS  JS Result
+var $slider = $('.slideshow .slider'),
+  maxItems = $('.item', $slider).length,
+  dragging = false,
+  tracking,
+  rightTracking;
 
-$(document).ready(function(){
-  var isWebkit = navigator && navigator.userAgent.match(/webkit/i);
-  var $root = $(isWebkit ? 'body' : 'html');
-  var elements = $('div'), elcount = elements.length;
-  var scrolling = false;
-  // Replacing the CSS attr(... url)
-  elements.css('background-image', function(i){
-    return 'url('+$(this).data('img')+')';
-  });
-  //Add permalinks
-  elements.each(function(i){
-    var $t = $(this);
-    var id = $t.attr('id');
-    if(!id) return;
-    $('<a>').addClass('permalink')
-            .attr('href', '#'+id)
-            .appendTo($t);
-  });
-  $root.keydown(function(e){
-    if(e.keyCode != 37 && e.keyCode != 39) return;
-    var current = scrolling || 0;
-    if(scrolling === false)
-    {
-      var bsT = $root.scrollTop(), t;
-      while(current < elcount && (t = elements.eq(current).offset().top) < bsT)
-        current++;
-    }
-    if(e.keyCode == 37) current--;
-    else if(scrolling !== false || t == bsT) current++;
-    current = (current + elcount) % elcount;
-    $root.stop().animate({scrollTop: elements.eq(current).offset().top}, function(){scrolling = false;});
-    scrolling = current;
-  });
+$sliderRight = $('.slideshow').clone().addClass('slideshow-right').appendTo($('.split-slideshow'));
+
+rightItems = $('.item', $sliderRight).toArray();
+reverseItems = rightItems.reverse();
+$('.slider', $sliderRight).html('');
+for (i = 0; i < maxItems; i++) {
+  $(reverseItems[i]).appendTo($('.slider', $sliderRight));
+}
+
+$slider.addClass('slideshow-left');
+$('.slideshow-left').slick({
+  vertical: true,
+  verticalSwiping: true,
+  arrows: false,
+  infinite: true,
+  dots: true,
+  speed: 1000,
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+
+  if (currentSlide > nextSlide && nextSlide == 0 && currentSlide == maxItems - 1) {
+    $('.slideshow-right .slider').slick('slickGoTo', -1);
+    $('.slideshow-text').slick('slickGoTo', maxItems);
+  } else if (currentSlide < nextSlide && currentSlide == 0 && nextSlide == maxItems - 1) {
+    $('.slideshow-right .slider').slick('slickGoTo', maxItems);
+    $('.slideshow-text').slick('slickGoTo', -1);
+  } else {
+    $('.slideshow-right .slider').slick('slickGoTo', maxItems - 1 - nextSlide);
+    $('.slideshow-text').slick('slickGoTo', nextSlide);
+  }
+}).on("mousewheel", function(event) {
+  event.preventDefault();
+  if (event.deltaX > 0 || event.deltaY < 0) {
+    $(this).slick('slickNext');
+  } else if (event.deltaX < 0 || event.deltaY > 0) {
+    $(this).slick('slickPrev');
+  };
+}).on('mousedown touchstart', function(){
+  dragging = true;
+  tracking = $('.slick-track', $slider).css('transform');
+  tracking = parseInt(tracking.split(',')[5]);
+  rightTracking = $('.slideshow-right .slick-track').css('transform');
+  rightTracking = parseInt(rightTracking.split(',')[5]);
+}).on('mousemove touchmove', function(){
+  if (dragging) {
+    newTracking = $('.slideshow-left .slick-track').css('transform');
+    newTracking = parseInt(newTracking.split(',')[5]);
+    diffTracking = newTracking - tracking;
+    $('.slideshow-right .slick-track').css({'transform': 'matrix(1, 0, 0, 1, 0, ' + (rightTracking - diffTracking) + ')'});
+  }
+}).on('mouseleave touchend mouseup', function(){
+  dragging = false;
 });
+
+$('.slideshow-right .slider').slick({
+  swipe: false,
+  vertical: true,
+  arrows: false,
+  infinite: true,
+  speed: 950,
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+  initialSlide: maxItems - 1
+});
+$('.slideshow-text').slick({
+  swipe: false,
+  vertical: true,
+  arrows: false,
+  infinite: true,
+  speed: 900,
+  cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+});
+
+
+
+
+Resources 1×0.5×0.25× Rerun
