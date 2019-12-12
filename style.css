@@ -1,4 +1,5 @@
 
+@import 'slideshow.css';
 @font-face {
     font-family: "Brainlove";
     src: url(src/BrainloveTTF.ttf) format("truetype");
